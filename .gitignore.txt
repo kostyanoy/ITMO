@@ -23,8 +23,5 @@
 hs_err_pid*
 
 #other
-*.idea
+**idea/
 *iml
-conf
-domain
-target
