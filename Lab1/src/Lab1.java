@@ -65,36 +65,33 @@ public class Lab1 {
     }
 
     private static double formula1(double x) {
-        return log(pow(pow(Math.cos(x), 2) / 2.0, 2));
+        x = Math.cos(x);
+        x = Math.pow(x, 2) / 2;
+        x = Math.pow(x, 2);
+        x = Math.log(x);
+        return x;
     }
 
     private static double formula2(double x) {
-        return pow(0.75 / log(pow(abs(x) * (Math.PI + abs(x)), x)), 
-            pow(0.5 / (1 - cbrt(x)), 3));
+        double res = Math.abs(x) + Math.PI;
+        res = res * Math.abs(x);
+        res = Math.pow(res, x);
+        res = Math.log(res);
+        res = 0.75 / res;
+        double p = 1 - Math.cbrt(x);
+        p = 0.5 / p;
+        p = Math.pow(p, 3);
+        res = Math.pow(res, p);
+        return res;
     }
 
     private static double formula3(double x) {
-        return log(Math.sqrt(pow(Math.tan(Math.sin(cbrt(x))), 2)));
-    }
-
-    private static double round(double x, int digits) {
-        var mul = Math.pow(10, digits);
-        return Math.round(x * mul) / mul;
-    }
-
-    private static double pow(double x, double a) {
-        return Math.pow(x, a);
-    }
-
-    private static double log(double x) {
-        return Math.log(x);
-    }
-
-    private static double cbrt(double x) {
-        return Math.cbrt(x);
-    }
-
-    private static double abs(double x) {
-        return Math.abs(x);
+        x = Math.cbrt(x);
+        x = Math.sin(x);
+        x = Math.tan(x);
+        x = Math.pow(x, 2);
+        x = Math.sqrt(x);
+        x = Math.log(x);
+        return x;
     }
 }
