@@ -1,9 +1,5 @@
 //Лабораторная 1 Манухин Константин Вариант 44214
-
-import java.util.Arrays;
-
 public class Lab1 {
-
     public static void main(String[] args) {
         var s = task1();
         var x = task2();
@@ -32,28 +28,27 @@ public class Lab1 {
     }
 
     private static double[][] task3(short[] s, double[] x) {
-        var n = new double[13][13];
-        var secondList = Arrays.asList(1, 7, 11, 13, 19, 23);
+        var array = new double[13][13];
+        var condition = new int[]{1, 7, 11, 13, 19, 23};
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 13; j++) {
                 double value;
                 if (s[i] == 21) {
                     value = formula1(x[j]);
-                } else if (secondList.contains((int) s[i])) {
+                } else if (contains(condition, s[i])) {
                     value = formula2(x[j]);
                 } else {
                     value = formula3(x[j]);
                 }
-                n[i][j] = value;
+                array[i][j] = value;
             }
         }
-        return n;
+        return array;
     }
 
     private static void task4(double[][] n) {
         for (var array : n) {
             for (var item : array) {
-                //System.out.printf("%.2f\t", item);
                 System.out.printf("%.2f\t", item);
             }
             System.out.println();
@@ -62,6 +57,14 @@ public class Lab1 {
 
     private static double getRandomDoubleFromRange(double min, double max) {
         return Math.random() * (max - min) + min;
+    }
+
+    private static boolean contains(int[] array, int value) {
+        for (var item : array) {
+            if (item == value)
+                return true;
+        }
+        return false;
     }
 
     private static double formula1(double x) {
