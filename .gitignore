@@ -4,18 +4,14 @@
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
-
 # Package Files 
 *.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
 
 #other
 .idea/
+build/
+gradlew
+gradlew.bat
+.gradle/
+gradle/
 *.iml
