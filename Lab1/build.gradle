@@ -17,9 +17,9 @@ repositories {
     mavenCentral()
 }
 sourceSets {
-    main {
+main {
         java {
-            srcDirs = ['src']
+            srcDirs = ['src/main/java']
         }
     }
 }

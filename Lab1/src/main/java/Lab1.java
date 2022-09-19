@@ -14,7 +14,6 @@ public class Lab1 {
             array[i] = k;
             k -= 2;
         }
-        //System.out.println("s = " + Arrays.toString(array));
         return array;
     }
 
@@ -23,7 +22,6 @@ public class Lab1 {
         for (int i = 0; i < 13; i++) {
             array[i] = getRandomDoubleFromRange(-5.0, 6.0);
         }
-        //System.out.println("x = " + Arrays.toString(array));
         return array;
     }
 
@@ -61,40 +59,44 @@ public class Lab1 {
 
     private static boolean contains(int[] array, int value) {
         for (var item : array) {
-            if (item == value)
+            if (item == value) {
                 return true;
+            }
         }
         return false;
     }
 
     private static double formula1(double x) {
-        x = Math.cos(x);
-        x = Math.pow(x, 2) / 2;
-        x = Math.pow(x, 2);
-        x = Math.log(x);
-        return x;
+        return Math.log(Math.pow(Math.pow(Math.cos(x), 2) / 2, 2));
+//        x = Math.cos(x);
+//        x = Math.pow(x, 2) / 2;
+//        x = Math.pow(x, 2);
+//        x = Math.log(x);
+//        return x;
     }
 
     private static double formula2(double x) {
-        double res = Math.abs(x) + Math.PI;
-        res = res * Math.abs(x);
-        res = Math.pow(res, x);
-        res = Math.log(res);
-        res = 0.75 / res;
-        double p = 1 - Math.cbrt(x);
-        p = 0.5 / p;
-        p = Math.pow(p, 3);
-        res = Math.pow(res, p);
-        return res;
+        return Math.pow(0.75 / Math.log(Math.pow((Math.abs(x) + Math.PI) * Math.abs(x), x)), Math.pow(0.5 / (1 - Math.cbrt(x)), 3));
+//        double res = Math.abs(x) + Math.PI;
+//        res = res * Math.abs(x);
+//        res = Math.pow(res, x);
+//        res = Math.log(res);
+//        res = 0.75 / res;
+//        double p = 1 - Math.cbrt(x);
+//        p = 0.5 / p;
+//        p = Math.pow(p, 3);
+//        res = Math.pow(res, p);
+//        return res;
     }
 
     private static double formula3(double x) {
-        x = Math.cbrt(x);
-        x = Math.sin(x);
-        x = Math.tan(x);
-        x = Math.pow(x, 2);
-        x = Math.sqrt(x);
-        x = Math.log(x);
-        return x;
+        return Math.log(Math.sqrt(Math.pow(Math.tan(Math.sin(Math.cbrt(x))), 2)));
+//        x = Math.cbrt(x);
+//        x = Math.sin(x);
+//        x = Math.tan(x);
+//        x = Math.pow(x, 2);
+//        x = Math.sqrt(x);
+//        x = Math.log(x);
+//        return x;
     }
 }
