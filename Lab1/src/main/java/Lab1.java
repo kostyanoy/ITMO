@@ -76,7 +76,8 @@ public class Lab1 {
     }
 
     private static double formula2(double x) {
-        return Math.pow(0.75 / Math.log(Math.pow((Math.abs(x) + Math.PI) * Math.abs(x), x)), Math.pow(0.5 / (1 - Math.cbrt(x)), 3));
+        return Math.pow(0.75 / Math.log(Math.pow((Math.abs(x) + Math.PI) * Math.abs(x), x)), 
+            Math.pow(0.5 / (1 - Math.cbrt(x)), 3));
 //        double res = Math.abs(x) + Math.PI;
 //        res = res * Math.abs(x);
 //        res = Math.pow(res, x);
