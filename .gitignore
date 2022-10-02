@@ -1,11 +1,10 @@
 # Compiled class file
 *.class
+*.jar
+*.MF
 
 # Log file
 *.log
-
-# Package Files 
-*.jar
 
 #other
 .idea/

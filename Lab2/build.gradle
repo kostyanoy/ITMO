@@ -1,0 +1,34 @@
+import pushToHelios
+
+plugins {
+    id 'java'
+    id 'application'
+}
+//apply plugin: Helios
+
+mainClassName = "lab2.Main"
+
+group 'org.itmo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+jar {
+    manifest.attributes('Main-Class': 'lab2.Main')
+}
+
+task helios(type: pushToHelios){
+    files = new String[]{
+        "src/main/java/lab2",
+        "out/artifacts/Lab2/Lab2.jar"
+    };
+}
