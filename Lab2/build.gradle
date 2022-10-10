@@ -4,7 +4,6 @@ plugins {
     id 'java'
     id 'application'
 }
-//apply plugin: Helios
 
 mainClassName = "lab2.Main"
 
@@ -20,15 +19,22 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.18.0'
 }
 
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest.attributes('Main-Class': 'lab2.Main')
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
-task helios(type: pushToHelios){
+task helios(type: pushToHelios, dependsOn: build){
+    ext.jar = String.format("build/libs/%s-%s.jar", project.name, project.version)
     files = new String[]{
         "src/main/java/lab2",
-        "out/artifacts/Lab2/Lab2.jar"
+        ext.jar,
+        "libs"
     };
 }

@@ -7,7 +7,7 @@ import lab2.moves.physical.IceShard;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
-public class Articuno extends Pokemon {
+public class Articuno extends BasePokemon {
 
     public Articuno(String name, int level) {
         super(name, level);

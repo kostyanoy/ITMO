@@ -5,7 +5,7 @@ import lab2.moves.special.IceBeam;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
-public class Poliwag extends Pokemon {
+public class Poliwag extends BasePokemon {
     public Poliwag(String name, int level) {
         super(name, level);
         setType(Type.WATER);

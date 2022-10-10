@@ -14,4 +14,4 @@ gradlew.bat
 .gradle/
 gradle/
 *.iml
-
+tmp/

@@ -6,7 +6,7 @@ import lab2.moves.special.Thunderbolt;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
-public class Snubbull extends Pokemon {
+public class Snubbull extends BasePokemon {
     public Snubbull(String name, int level) {
         super(name, level);
         setType(Type.FAIRY);
