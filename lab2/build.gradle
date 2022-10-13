@@ -1,8 +1,8 @@
 plugins {
     id 'java'
     id 'application'
+    id 'com.itmo.helios-push' version '1.0'
 }
-apply plugin: Helios
 
 mainClassName = "lab2.Main"
 
@@ -32,6 +32,7 @@ jar {
 helios() {
     ext.jar = String.format("build/libs/%s-%s.jar", project.name, project.version)
     projectName = "Lab2"
+    folderPath = "~/labs/programming"
     files = new String[]{
         "src/main/java/lab2",
         ext.jar,

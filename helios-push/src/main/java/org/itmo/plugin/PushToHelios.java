@@ -1,20 +1,24 @@
+package org.itmo.plugin;
+
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;
 
 import java.io.IOException;
 
-public class pushToHelios extends DefaultTask {
+public class PushToHelios extends DefaultTask {
     String[] files = new String[0];
     String projectName = "project";
+    String isu = "367379";
+    String folderPath = "~/labs/programming";
+    int waitingTime = 200;
 
     @TaskAction
-    public void transferToHelios(){
+    public void transferToHelios() throws IOException {
         try {
-            var server = "s367379@se.ifmo.ru";
-            var folder = "~/labs/programming";
+            var server = String.format("s%s@se.ifmo.ru", isu);
 
             var mkdir = String.format("mkdir -p tmp/" + projectName);
-            var transfer = String.format("scp -r -P 2222 tmp/%s %s:%s", projectName, server, folder);
+            var transfer = String.format("scp -r -P 2222 tmp/%s %s:%s", projectName, server, folderPath);
 
             execute(mkdir);
             for (String file : files){
@@ -34,9 +38,10 @@ public class pushToHelios extends DefaultTask {
         execute(copy);
     }
 
-    private static void execute(String command) throws InterruptedException, IOException {
+    private void execute(String command) throws InterruptedException, IOException {
         Runtime.getRuntime().exec(command);
-        Thread.sleep(200);
+        Thread.sleep(waitingTime);
     }
 }
+
 

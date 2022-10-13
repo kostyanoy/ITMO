@@ -1,2 +1,4 @@
+pluginManagement.repositories.maven {
+    url = '/home/konstantin/repos/itmo/helios-push/build/repo/'
+}
 rootProject.name = 'Lab2'
-
