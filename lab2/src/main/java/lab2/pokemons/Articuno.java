@@ -1,10 +1,9 @@
 package lab2.pokemons;
 
 import lab2.moves.physical.AerialAce;
-import lab2.moves.status.Agility;
 import lab2.moves.physical.Facade;
 import lab2.moves.physical.IceShard;
-import ru.ifmo.se.pokemon.Pokemon;
+import lab2.moves.status.Agility;
 import ru.ifmo.se.pokemon.Type;
 
 public class Articuno extends BasePokemon {

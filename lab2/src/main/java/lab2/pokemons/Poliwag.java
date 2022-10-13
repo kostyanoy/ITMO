@@ -1,8 +1,7 @@
 package lab2.pokemons;
 
-import lab2.moves.status.Hypnosis;
 import lab2.moves.special.IceBeam;
-import ru.ifmo.se.pokemon.Pokemon;
+import lab2.moves.status.Hypnosis;
 import ru.ifmo.se.pokemon.Type;
 
 public class Poliwag extends BasePokemon {

@@ -5,20 +5,20 @@ import java.io.IOException;
 
 public class pushToHelios extends DefaultTask {
     String[] files = new String[0];
+    String projectName = "project";
 
     @TaskAction
     public void transferToHelios(){
         try {
-            var project = "Lab2";
             var server = "s367379@se.ifmo.ru";
             var folder = "~/labs/programming";
 
-            var mkdir = String.format("mkdir -p tmp/" + project);
-            var transfer = String.format("scp -r -P 2222 tmp/%s %s:%s", project, server, folder);
+            var mkdir = String.format("mkdir -p tmp/" + projectName);
+            var transfer = String.format("scp -r -P 2222 tmp/%s %s:%s", projectName, server, folder);
 
             execute(mkdir);
             for (String file : files){
-                copyToFolder(file, project);
+                copyToFolder(file, projectName);
             }
             execute(transfer);
 

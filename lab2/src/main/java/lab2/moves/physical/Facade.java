@@ -4,6 +4,7 @@ import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
+
 public class Facade extends PhysicalMove {
     public Facade() {
         super(Type.NORMAL, 70, 100);
@@ -11,14 +12,16 @@ public class Facade extends PhysicalMove {
 
     @Override
     protected double calcBaseDamage(Pokemon pokemon, Pokemon pokemon1) {
-        switch (pokemon.getCondition()){
-            case BURN, POISON, PARALYZE: power *= 2;
+        switch (pokemon.getCondition()) {
+            case BURN, POISON, PARALYZE:
+                power *= 2;
         }
 
         var damage = super.calcBaseDamage(pokemon, pokemon1);
 
-        switch (pokemon.getCondition()){
-            case BURN, POISON, PARALYZE: power /= 2;
+        switch (pokemon.getCondition()) {
+            case BURN, POISON, PARALYZE:
+                power /= 2;
         }
 
         return damage;

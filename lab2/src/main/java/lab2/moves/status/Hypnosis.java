@@ -14,7 +14,7 @@ public class Hypnosis extends StatusMove {
 
     @Override
     protected void applyOppEffects(Pokemon pokemon) {
-        var e = (new Effect()).condition(Status.SLEEP).attack(0).turns((int)(Math.random() * 3 + 1));
+        var e = (new Effect()).condition(Status.SLEEP).attack(0).turns((int) (Math.random() * 3 + 1));
         pokemon.addEffect(e);
     }
 }

@@ -1,9 +1,8 @@
 package lab2.pokemons;
 
 import lab2.moves.physical.Tackle;
-import lab2.moves.status.TailWhip;
 import lab2.moves.special.Thunderbolt;
-import ru.ifmo.se.pokemon.Pokemon;
+import lab2.moves.status.TailWhip;
 import ru.ifmo.se.pokemon.Type;
 
 public class Snubbull extends BasePokemon {
