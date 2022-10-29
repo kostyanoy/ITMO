@@ -35,26 +35,4 @@ public abstract class Nameable {
     public void setDescription(String description) {
         setDescription(p -> description);
     }
-
-
-    @Override
-    public String toString() {
-        return getName() + ": " + getDescription(new Player("player"));
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Nameable nameable)) return false;
-
-        if (getName() != null ? !getName().equals(nameable.getName()) : nameable.getName() != null) return false;
-        return Objects.equals(description, nameable.description);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        return result;
-    }
 }

@@ -1,23 +1,20 @@
 package lab3.functionality;
 
 public abstract class Quest {
-    protected final Location startLocation;
+    //protected final Location startLocation;
     protected final Reader reader;
     protected final Writer writer;
-    public Location curLocation;
+    //public Location player.getLocation();
     protected boolean isGoing = true;
     protected Player player;
 
-    public Quest(Reader reader, Writer writer, Location startLocation) {
+    public Quest(Reader reader, Writer writer, Player player) {
         this.reader = reader;
         this.writer = writer;
-        this.startLocation = startLocation;
+        this.player = player;
     }
 
     public void start() {
-        writer.write("Введите имя главного героя: ");
-        player = new Player(reader.readLine());
-        enterLocation(startLocation);
         while (isGoing) {
             showVariants();
             checkPlayer();
@@ -47,19 +44,19 @@ public abstract class Quest {
     }
 
     private void chooseLocation() {
-        writer.writeln(String.format("Выберите локацию:\n0)Вернуться\n1)Осмотреть %s (текущая)", curLocation.getName()));
-        var locations = curLocation.getLocations();
+        writer.writeln(String.format("Выберите локацию:\n0)Вернуться\n1)Осмотреть %s (текущая)", player.getLocation().getName()));
+        var locations = player.getLocation().getLocations();
         showNames(locations, 2);
         var ind = reader.readInt();
         switch (ind) {
             case 0:
                 break;
             case 1:
-                chooseAction(curLocation);
+                chooseAction(player.getLocation());
                 break;
             default:
                 try {
-                    enterLocation(locations[ind - 2]);
+                    player.setLocation(locations[ind - 2]);
                 } catch (IndexOutOfBoundsException e) {
                     writer.writeln("Неправильное число");
                 }
@@ -68,7 +65,7 @@ public abstract class Quest {
 
     private void chooseItem() {
         writer.writeln("Выберите предмет:\n0)Вернуться");
-        var items = curLocation.getItems();
+        var items = player.getLocation().getItems();
         showNames(items, 1);
         var ind = reader.readInt();
         if (ind != 0) {
@@ -76,7 +73,7 @@ public abstract class Quest {
                 var item = items[ind - 1];
                 chooseAction(item);
                 if (item.isConsumable() && item.getActions().length == 0) {
-                    curLocation.removeItem(ind - 1);
+                    player.getLocation().removeItem(ind - 1);
                 }
             } catch (IndexOutOfBoundsException e) {
                 writer.writeln("Неверное число!");
@@ -121,9 +118,9 @@ public abstract class Quest {
         }
     }
 
-    public void enterLocation(Location location) {
-        curLocation = location;
-        writer.writeln(location.enter(player));
-    }
+//    public void enterLocation(Location location) {
+//        player.getLocation() = location;
+//        writer.writeln(location.enter(player));
+//    }
 
 }
