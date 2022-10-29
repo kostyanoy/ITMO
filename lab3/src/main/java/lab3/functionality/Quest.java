@@ -4,8 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public abstract class Quest {
-    private final Scanner scanner = new Scanner(System.in);
     protected final Location startLocation;
+    private final Scanner scanner = new Scanner(System.in);
     public Location curLocation;
     protected boolean isGoing = true;
     protected Player player;
@@ -30,7 +30,7 @@ public abstract class Quest {
     }
 
     private void checkPlayer() {
-        if (player.getHealth() == Health.Dead) {
+        if (player.getHealth() == Health.DEAD) {
             end(String.format("%s умер!", player.getName()));
         }
     }

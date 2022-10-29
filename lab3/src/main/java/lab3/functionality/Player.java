@@ -6,7 +6,7 @@ public class Player extends Actionable {
 
     public Player(String name) {
         super(name, p -> String.format("Состояние %s\nЗдоровье: %s", p.getName(), p.getHealth().getName()));
-        setHealth(Health.Healthy);
+        setHealth(Health.HEALTHY);
     }
 
     public Health getHealth() {

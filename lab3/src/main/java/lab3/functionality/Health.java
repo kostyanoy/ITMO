@@ -1,7 +1,12 @@
 package lab3.functionality;
 
 public enum Health {
-    Healthy("Полностью здоров"), Scratched("Ушиблен"), Injured("Ранен"), Bleeding("Кровотечение"), DeathDoor("При смерти"), Dead("Мёртв");
+    HEALTHY("Полностью здоров"),
+    SCRATCHED("Ушиблен"),
+    INJURED("Ранен"),
+    BLEEDING("Кровотечение"),
+    DEATH_DOOR("При смерти"),
+    DEAD("Мёртв");
 
     private final String name;
 
@@ -14,12 +19,12 @@ public enum Health {
     }
 
     public Health previous() {
-        if (this == Healthy) return Healthy;
+        if (this == HEALTHY) return HEALTHY;
         return values()[this.ordinal() - 1];
     }
 
     public Health next() {
-        if (this == Dead) return Dead;
+        if (this == DEAD) return DEAD;
         return values()[this.ordinal() + 1];
     }
 }
