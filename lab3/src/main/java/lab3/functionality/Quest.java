@@ -1,10 +1,8 @@
 package lab3.functionality;
 
 public abstract class Quest {
-    //protected final Location startLocation;
     protected final Reader reader;
     protected final Writer writer;
-    //public Location player.getLocation();
     protected boolean isGoing = true;
     protected Player player;
 
@@ -117,10 +115,4 @@ public abstract class Quest {
             writer.writeln(String.format("%d)%s", i + shift, array[i].getName()));
         }
     }
-
-//    public void enterLocation(Location location) {
-//        player.getLocation() = location;
-//        writer.writeln(location.enter(player));
-//    }
-
 }

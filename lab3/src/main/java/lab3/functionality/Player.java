@@ -41,7 +41,7 @@ public class Player extends Actionable {
         if (this == o) return true;
         if (!(o instanceof Player player)) return false;
 
-        return getName() == player.getName();
+        return getName().equals(player.getName());
     }
 
     @Override
