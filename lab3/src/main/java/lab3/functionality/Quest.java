@@ -1,5 +1,7 @@
 package lab3.functionality;
 
+import java.util.ArrayList;
+
 public abstract class Quest {
     protected final Reader reader;
     protected final Writer writer;
@@ -54,7 +56,7 @@ public abstract class Quest {
                 break;
             default:
                 try {
-                    player.setLocation(locations[ind - 2]);
+                    player.setLocation(locations.get(ind - 2));
                 } catch (IndexOutOfBoundsException e) {
                     writer.writeln("Неправильное число");
                 }
@@ -68,9 +70,9 @@ public abstract class Quest {
         var ind = reader.readInt();
         if (ind != 0) {
             try {
-                var item = items[ind - 1];
+                var item = items.get(ind - 1);
                 chooseAction(item);
-                if (item.isConsumable() && item.getActions().length == 0) {
+                if (item.isConsumable() && item.getActions().size() == 0) {
                     player.getLocation().removeItem(ind - 1);
                 }
             } catch (IndexOutOfBoundsException e) {
@@ -87,10 +89,10 @@ public abstract class Quest {
         var ind = reader.readInt();
         if (ind != 0) {
             try {
-                var action = actions[ind - 1];
+                var action = actions.get(ind - 1);
                 showDescription(action);
-                actions[ind - 1].use(this, player);
-                if (actions[ind - 1].isDisposable()) {
+                actions.get(ind - 1).use(this, player);
+                if (actions.get(ind - 1).isDisposable()) {
                     try {
                         act.removeAction(ind - 1);
                     } catch (IndexOutOfBoundsException e) {
@@ -110,9 +112,9 @@ public abstract class Quest {
         writer.writeln("");
     }
 
-    private void showNames(Nameable[] array, int shift) {
-        for (var i = 0; i < array.length; i++) {
-            writer.writeln(String.format("%d)%s", i + shift, array[i].getName()));
+    private void showNames(ArrayList<? extends Nameable> array, int shift) {
+        for (var i = 0; i < array.size(); i++) {
+            writer.writeln(String.format("%d)%s", i + shift, array.get(i).getName()));
         }
     }
 }

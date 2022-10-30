@@ -6,7 +6,7 @@ import lab3.functionality.Writer;
 import lab3.interaction.CommandLineReader;
 import lab3.interaction.CommandLineWriter;
 import lab3.myquest.locations.Space;
-import lab3.myquest.myQuest;
+import lab3.myquest.MyQuest;
 
 public class Main {
     static Writer writer = new CommandLineWriter();
@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         writer.write("Введите имя главного героя: ");
         var player = new Player(reader.readLine(), new Space("Пространство"));
-        var quest = new myQuest(player);
+        var quest = new MyQuest(player);
         quest.start();
     }
 }

@@ -14,9 +14,10 @@ public abstract class Actionable extends Nameable {
         this(name, p -> description);
     }
 
-    public Action[] getActions() {
-        var result = new Action[actions.size()];
-        return actions.toArray(result);
+    public ArrayList<Action> getActions() {
+//        var result = new Action[actions.size()];
+//        return actions.toArray(result);
+        return actions;
     }
 
     public void addAction(Action action) {

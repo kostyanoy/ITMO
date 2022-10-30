@@ -16,14 +16,12 @@ public abstract class Location extends Actionable {
 
     public abstract String enter(Player player);
 
-    public Item[] getItems() {
-        var result = new Item[items.size()];
-        return items.toArray(result);
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
-    public Location[] getLocations() {
-        var result = new Location[locations.size()];
-        return locations.toArray(result);
+    public ArrayList<Location> getLocations() {
+        return locations;
     }
 
     public void addLocation(Location location) {
