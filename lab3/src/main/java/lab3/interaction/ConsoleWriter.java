@@ -2,7 +2,7 @@ package lab3.interaction;
 
 import lab3.functionality.Writer;
 
-public class CommandLineWriter implements Writer {
+public class ConsoleWriter implements Writer {
     @Override
     public void write(String text) {
         System.out.print(text);

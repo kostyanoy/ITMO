@@ -18,7 +18,7 @@ public class Player extends Actionable {
         super(name, p -> String.format("Состояние %s\nЗдоровье: %s", p.getName(), p.getHealth().getName()));
         setHealth(Health.HEALTHY);
         setLocation(startLocation);
-        completedQuest = false;
+        setCompletedQuest(false);
     }
 
     public Location getLocation() {

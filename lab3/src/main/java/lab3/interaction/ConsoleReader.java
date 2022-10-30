@@ -5,7 +5,7 @@ import lab3.functionality.Reader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class CommandLineReader implements Reader {
+public class ConsoleReader implements Reader {
 
     final Scanner scanner = new Scanner(System.in);
     @Override
