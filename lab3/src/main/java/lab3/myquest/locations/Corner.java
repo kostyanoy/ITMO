@@ -12,7 +12,7 @@ public class Corner extends Location {
         addItem(new BreakableItem("Люстра", "Красивая хрустальная люстра"));
         addItem(new BreakableItem("Лампа", "Яркая лампа"));
         var bookShell = new Item("Книжная полка", "Полка с множеством книг.");
-        bookShell.addAction(new Action("Осмотреть", p -> p.getName() + " врезался головой в книжную полку, отчего книги разлетелись в разные стороны.", (q, p) -> bookShell.setDescription("Теперь уже пустая полка"), true));
+        bookShell.addAction(new Action("Осмотреть", p -> p.getName() + " врезался головой в книжную полку, отчего книги разлетелись в разные стороны.", p -> bookShell.setDescription("Теперь уже пустая полка"), true));
         addItem(bookShell);
     }
 

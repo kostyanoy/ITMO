@@ -15,8 +15,6 @@ public abstract class Actionable extends Nameable {
     }
 
     public ArrayList<Action> getActions() {
-//        var result = new Action[actions.size()];
-//        return actions.toArray(result);
         return actions;
     }
 

@@ -4,20 +4,30 @@ public class Player extends Actionable {
 
     private Health health;
     private Location curLocation;
+    private boolean completedQuest;
+
+    public boolean isCompletedQuest() {
+        return completedQuest;
+    }
+
+    public void setCompletedQuest(boolean completedQuest) {
+        this.completedQuest = completedQuest;
+    }
 
     public Player(String name, Location startLocation) {
         super(name, p -> String.format("Состояние %s\nЗдоровье: %s", p.getName(), p.getHealth().getName()));
         setHealth(Health.HEALTHY);
         setLocation(startLocation);
+        completedQuest = false;
     }
 
     public Location getLocation() {
         return curLocation;
     }
 
-    public void setLocation(Location location) {
+    public String setLocation(Location location) {
         this.curLocation = location;
-        location.enter(this);
+        return location.enter(this);
     }
 
     public Health getHealth() {

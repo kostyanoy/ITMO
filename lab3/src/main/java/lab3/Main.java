@@ -9,8 +9,8 @@ import lab3.myquest.locations.Space;
 import lab3.myquest.MyQuest;
 
 public class Main {
-    static Writer writer = new CommandLineWriter();
-    static Reader reader = new CommandLineReader();
+    static final Writer writer = new CommandLineWriter();
+    static final Reader reader = new CommandLineReader();
 
     public static void main(String[] args) {
         writer.write("Введите имя главного героя: ");

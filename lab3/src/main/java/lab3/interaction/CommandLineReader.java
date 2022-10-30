@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CommandLineReader implements Reader {
 
-    Scanner scanner = new Scanner(System.in);
+    final Scanner scanner = new Scanner(System.in);
     @Override
     public String readLine() {
         return scanner.nextLine();

@@ -14,8 +14,8 @@ public class Action extends Nameable {
         this.disposable = disposable;
     }
 
-    public void use(Quest quest, Player player) {
-        usable.use(quest, player);
+    public void use(Player player) {
+        usable.use(player);
     }
 
     public boolean isDisposable() {

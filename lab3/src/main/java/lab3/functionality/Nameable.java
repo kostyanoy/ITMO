@@ -1,7 +1,5 @@
 package lab3.functionality;
 
-import java.util.Objects;
-
 public abstract class Nameable {
 
     private String name;

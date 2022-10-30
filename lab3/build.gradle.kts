@@ -19,7 +19,7 @@ tasks.helios {
     projectName = "lab3"
     isu = "367379"
     folderPath = "~/labs/programming"
-    val arr = arrayOf<String>(
+    val arr = arrayOf(
         "src",
         "build/libs/lab3-1.0-SNAPSHOT.jar",
         "build.gradle.kts",

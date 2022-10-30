@@ -7,7 +7,7 @@ public class BreakableItem extends Item {
 
     public BreakableItem(String name, String description) {
         super(name, description);
-        addAction(new Action("Разбить", p -> p.getName() + " задевает что-то своим телом. Бедная " + name, (q, p) -> {
+        addAction(new Action("Разбить", p -> p.getName() + " задевает что-то своим телом. Бедная " + name, p -> {
             setName("Осколки");
             setDescription("Разбитые остатки какого-то предмета");
         }, true));
