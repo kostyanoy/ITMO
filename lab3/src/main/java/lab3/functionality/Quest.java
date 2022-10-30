@@ -17,7 +17,7 @@ public abstract class Quest {
         }
     }
 
-    public void end(String reason) {
+    private void end(String reason) {
         designer.endMessage(reason);
         isGoing = false;
     }

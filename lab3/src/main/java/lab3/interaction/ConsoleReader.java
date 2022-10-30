@@ -6,7 +6,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleReader implements Reader {
-
     final Scanner scanner = new Scanner(System.in);
     @Override
     public String readLine() {

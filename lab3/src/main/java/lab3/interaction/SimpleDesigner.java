@@ -4,12 +4,12 @@ import lab3.functionality.*;
 
 import java.util.ArrayList;
 
-public class ConsoleDesigner implements Designer {
+public class SimpleDesigner implements Designer {
     private final Reader reader;
     private final Writer writer;
     private final Player player;
 
-    public ConsoleDesigner(Reader reader, Writer writer, Player player) {
+    public SimpleDesigner(Reader reader, Writer writer, Player player) {
         this.reader = reader;
         this.writer = writer;
         this.player = player;
