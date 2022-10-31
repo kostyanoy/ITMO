@@ -2,7 +2,6 @@ package lab3.functionality;
 
 public abstract class Quest {
     protected final Designer designer;
-    private boolean isGoing = true;
     protected final Player player;
 
     public Quest(Designer designer, Player player) {
@@ -11,7 +10,7 @@ public abstract class Quest {
     }
 
     public void start() {
-        while (isGoing) {
+        while (!player.isCompletedQuest()) {
             designer.interactionSession();
             checkPlayer();
         }
@@ -19,7 +18,7 @@ public abstract class Quest {
 
     private void end(String reason) {
         designer.endMessage(reason);
-        isGoing = false;
+        player.setCompletedQuest(true);
     }
 
     private void checkPlayer() {
