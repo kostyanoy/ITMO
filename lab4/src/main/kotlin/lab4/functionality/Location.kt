@@ -8,8 +8,20 @@ abstract class Location(name: String, description: Description) : Actionable(nam
 
     abstract fun enter(player: Player): String
 
-    fun connect(loc: Location) {
-        loc.locations.add(this)
-        locations.add(loc)
+    // Fluent API or IDK
+    fun addOneWayLocation(other: Location): Location {
+        locations.add(other)
+        return other
+    }
+
+    fun addBothWayLocation(other: Location): Location {
+        other.locations.add(this)
+        locations.add(other)
+        return other
+    }
+
+    fun addItem(item: Item): Location {
+        items.add(item)
+        return this
     }
 }
