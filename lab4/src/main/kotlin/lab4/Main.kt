@@ -13,28 +13,33 @@ interface Welcome{
 }
 
 fun main(args: Array<String>) {
+    // DI activation
     startKoin {
         modules(listOf(interactionModule, playerModule, questModule))
     }
+
+    // some anon class
     val w = object : Welcome {
         override fun welcome() {
             println("Welcome!")
         }
     }
     w.welcome()
+    // some inner class
     Application().QuestManager().start()
+    // some sealed(?) class
     Application.GoodbyeManager().goodbye()
 }
 
 class Application : KoinComponent {
     private val quest: Quest by inject()
-
+    //inner class
     inner class QuestManager {
         fun start() {
             quest.start()
         }
     }
-
+    // sealed(?) class
     class GoodbyeManager {
         fun goodbye(){
             println("goodbye, my friend")
