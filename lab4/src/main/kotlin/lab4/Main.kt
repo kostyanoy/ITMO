@@ -8,11 +8,20 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
 
+interface Welcome{
+    fun welcome()
+}
+
 fun main(args: Array<String>) {
     startKoin {
         modules(listOf(interactionModule, playerModule, questModule))
     }
-
+    val w = object : Welcome {
+        override fun welcome() {
+            println("Welcome!")
+        }
+    }
+    w.welcome()
     Application().QuestManager().start()
     Application.GoodbyeManager().goodbye()
 }
