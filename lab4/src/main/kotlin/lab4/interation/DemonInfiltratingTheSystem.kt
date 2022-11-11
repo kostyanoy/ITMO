@@ -1,4 +1,3 @@
 package lab4.interation
 
-class DemonInfiltratingTheSystem : Exception("Call the exorcist") {
-}
+class DemonInfiltratingTheSystem : Exception("Call the exorcist")

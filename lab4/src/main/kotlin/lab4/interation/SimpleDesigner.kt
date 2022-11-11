@@ -67,10 +67,7 @@ class SimpleDesigner(private val reader: Reader, private val writer: Writer, pri
             showDescription(action)
             actions[ind - 1].use(player, obj)
             if (actions[ind - 1].isDisposable) {
-                try {
-                    actions.removeAt(ind - 1)
-                } catch (e: IndexOutOfBoundsException) {
-                }
+                actions.removeAt(ind - 1)
             }
         }
     }

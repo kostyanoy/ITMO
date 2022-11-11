@@ -1,6 +1,6 @@
 package lab4.functionality
 
-class Quest(private val designer: Designer, protected val player: Player) {
+class Quest(private val designer: Designer, private val player: Player) {
 
     fun start() {
         while (!player.completedQuest) {
