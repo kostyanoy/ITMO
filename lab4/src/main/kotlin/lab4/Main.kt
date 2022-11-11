@@ -13,13 +13,22 @@ fun main(args: Array<String>) {
         modules(listOf(interactionModule, playerModule, questModule))
     }
 
-    Application().start()
+    Application().QuestManager().start()
+    Application.GoodbyeManager().goodbye()
 }
 
 class Application : KoinComponent {
     private val quest: Quest by inject()
 
-    fun start() {
-        quest.start()
+    inner class QuestManager {
+        fun start() {
+            quest.start()
+        }
+    }
+
+    class GoodbyeManager {
+        fun goodbye(){
+            println("goodbye, my friend")
+        }
     }
 }
