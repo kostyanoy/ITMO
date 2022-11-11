@@ -19,6 +19,7 @@ class SimpleDesigner(private val reader: Reader, private val writer: Writer, pri
                 1 -> chooseAction(player)
                 2 -> chooseLocation()
                 3 -> chooseItem()
+                666 -> throw DemonInfiltratingTheSystem()
                 else -> writer.writeln("Неверное число")
             }
         } catch (e: IndexOutOfBoundsException) {
