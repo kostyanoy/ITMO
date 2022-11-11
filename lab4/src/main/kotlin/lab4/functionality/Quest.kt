@@ -1,6 +1,6 @@
 package lab4.functionality
 
-abstract class Quest(private val designer: Designer, protected val player: Player) {
+class Quest(private val designer: Designer, protected val player: Player) {
 
     fun start() {
         while (!player.completedQuest) {
@@ -9,7 +9,7 @@ abstract class Quest(private val designer: Designer, protected val player: Playe
         }
     }
 
-    fun end(reason: String) {
+    private fun end(reason: String) {
         designer.endMessage(reason)
         player.completedQuest = true
     }

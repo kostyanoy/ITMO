@@ -6,7 +6,9 @@ abstract class Location(name: String, description: Description) : Actionable(nam
 
     constructor(name: String, description: String) : this(name, { description })
 
-    abstract fun enter(player: Player): String
+    open fun enter(player: Player): String {
+        return ""
+    }
 
     // Fluent API or IDK
     fun addOneWayLocation(other: Location): Location {

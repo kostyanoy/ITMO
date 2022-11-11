@@ -4,6 +4,11 @@ class Player(name: String, var location: Location) : Actionable(name, { p -> "С
     var health: Health = Health.HEALTHY
     var completedQuest: Boolean = false
 
+    fun enterLocation(location: Location){
+        this.location = location
+        location.enter(this)
+    }
+
     fun damage(){
         health = health.next()
     }
