@@ -4,13 +4,9 @@ import lab4.functionality.*
 
 class SimpleDesigner(private val reader: Reader, private val writer: Writer, private val player: Player) : Designer {
 
-    override fun interactionSession() {
-        showVariants()
-    }
+    override fun interactionSession() = showVariants()
 
-    override fun endMessage(reason: String) {
-        writer.writeln(reason)
-    }
+    override fun endMessage(reason: String) = writer.writeln(reason)
 
     private fun showVariants() {
         writer.writeln("Выберите, с чем взаимодействовать:\n1)Посмотреть состояние ${player.name}\n2)Локации\n3)Предметы")

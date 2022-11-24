@@ -1,14 +1,15 @@
 package lab4.functionality
 
-abstract class Location(name: String, description: Description) : Actionable(name, description) {
+abstract class Location(
+    name: String,
+    description: Description
+) : Actionable(name, description) {
     val items = ArrayList<Item>()
     val locations = ArrayList<Location>()
 
     constructor(name: String, description: String) : this(name, { description })
 
-    open fun enter(player: Player): String {
-        return ""
-    }
+    open fun enter(player: Player) = ""
 
     // Fluent API or IDK
     fun addOneWayLocation(other: Location): Location {

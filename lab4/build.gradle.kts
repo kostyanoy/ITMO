@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.10"
+    id("io.github.kostyanoy.helios-push") version "1.0.2"
     application
 }
 
@@ -35,4 +36,19 @@ tasks.jar {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.helios {
+    projectName = "lab4"
+    isu = "367379"
+    folderPath = "~/labs/programming"
+    val arr = arrayOf(
+        "src",
+        "build/libs/lab4-1.0-SNAPSHOT.jar",
+        "build.gradle.kts",
+        "settings.gradle.kts",
+        "gradlew",
+        "gradle"
+    )
+    files = arr
 }

@@ -3,9 +3,7 @@ package lab4.interation
 import lab4.functionality.Reader
 
 class ConsoleReader : Reader {
-    override fun readLine(): String {
-        return readln()
-    }
+    override fun readLine() = readln()
 
     override fun readInt(): Int {
         while (true) {

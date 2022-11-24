@@ -7,6 +7,8 @@ import lab4.functionality.Quest
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
+import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
 
 interface Welcome{
     fun welcome()
@@ -32,7 +34,7 @@ fun main(args: Array<String>) {
 }
 
 class Application : KoinComponent {
-    private val quest: Quest by inject()
+    private val quest by inject<Quest>()
     //inner class
     inner class QuestManager {
         fun start() {

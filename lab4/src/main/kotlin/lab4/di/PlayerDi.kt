@@ -5,7 +5,7 @@ import lab4.myQuest.locations.Start
 import org.koin.dsl.module
 
 val playerModule = module {
-    single<Player> {
-        Player("Player", Start())
+    single {
+        Player("Незнайка", Start())
     }
 }
